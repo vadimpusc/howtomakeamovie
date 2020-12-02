@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Hank Orion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 16px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+
+  h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #000000;
+    /* margin-bottom: 30px; */
+    font-family: 'Anton', sans-serif;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+    /* font-family: 'Anton', sans-serif; */
+  }
+  .jumbotron {
+    background-color: #000000;
+    color: #fff;
+    padding: 100px 25px;
+  font-family: 'Anton', sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+    font-family: 'Anton', sans-serif;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #000000;
+  }
+  .carousel-indicators li {
+    border-color: #000000;
+  }
+  .carousel-indicators li.active {
+    background-color: #000000;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #000000;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #000000;
+    z-index: 9999;
+    border: 0;
+    font-size: 24px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: 'Anton', sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    font-size: 24px !important;
+    font-family: 'Anton', sans-serif;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000000 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+    }
+  }
+  </style>
+</head>
+<body id="imakemovies" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#imakemovies">MAKE MOVIES</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#step1">Step 1</a></li>
+        <li><a href="#step2">Step 2</a></li>
+        <li><a href="#step3">Step 3</a></li>
+        <li><a href="#step4">Step 4</a></li>
+        <li><a href="#step5">Step 5</a></li>
+        <li><a href="#step6">Step 6</a></li>
+        <!-- <li><a href="#connect">Step 5</a></li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Image -->
+<img style="width:100%;" id="image" src="img/main.jpg">
+<!-- end -->
+
+
+<!-- Container (Step 1) -->
+<div id="step1" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Writing Your Movie</h2><br>
+      <h4>Take a blank piece of paper and write down numbers from 0 to 100 in a row. Each one of those numbers will be a scene. Even if each one of those scenes is a minute long we got a movie that's 1h 40min long! Think of each scene as a gear in a clock, it has to fit, make sense, and push the story forward. Take your time, have a coffee, it will come to you.
+        <br>
+        <br>
+I think this is the perfect way to start writing a script as it gives you a visual representation of what you have in front of you and a sense of direction where you going. Some writers use index cards, I don't like that much and find myself using this technique most often instead.<br>
+<br>
+Once you have your 100 scenes, start writing more in-depth. I assume you know how to format a movie script, if not research it on YouTube it's very easy. Few tips: keep it in a few locations, fewer actors better, no aliens, no explosions. Remember less is more, and it shows.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/1.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Container (Step 2) -->
+<div id="step2" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Casting Your Film</h2><br>
+      <h4>We're making a movie! Not a fashion film, not an advert, not a music video! Stop casting actors just because they look good! Looks do not matter. Talent does. Cast actors because they can bring your characters to life.
+        <br>
+        <br>
+This is how I do it: Once I have a list of characters I post a casting call on Facebook groups and ask for a self-tape or a monologue. I do this not because I want to see how good the actor really is, I do it because I want to see if the actor is really into acting. A lot of actors out there call themself actors but are even too lazy to put an effort into writing an email and copy and paste when contacting you or would not even bother sending you a tape. Do not work with those. If they promise and miss a deadline they are not passionate about the craft.<br>
+<br>
+Days when you had to book a casting room and a table and sit and wait for actors to be stuck in traffic or can't find parking are gone. Cast online. Save time. Once you have a feeling you found a good fit for the character go for a coffee, build a professional relationship, show them you're a human too and you bleed.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/2.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Step 3) -->
+<div id="step3" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Scheduling Scheduling Scheduling</h2><br>
+      <h4>This is important. If you do this wrong you will be behind deadlines and over budget. Take your time when planning your shoot. I always shoot by locations, and exteriors first. Weather changes, buildings get demolished. Once all of the exteriors are out of the way I'd move to interiors as it's a much more controlled environment to film.
+        <br>
+        <br>
+Don't be afraid of shooting out of chronological order, it's a bit challenging but it makes a lot of sense when making an indie movie just make sure you had a good AD to keep track of the schedule and continuity. Make sure before you start shooting you already have the following out of the way: location list, prop list, cast list, script, crew, equipment list needed for production, catering covered.<br>
+<br>
+The easiest way to make a film is real-time, meaning you film the story as it happens. Ideally, this would be in one location but can also be done in more locations when the camera follows the character.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/3.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Step 4) -->
+<div id="step4" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Shooting Your Movie</h2><br>
+      <h4>Do not fool into the category that you need mainstream Hollywood cameras to make a movie because that's what they use or because that's what you see YouTubers use who call themself filmmakers, most of them are not filmmakers, they never make a feature film and all they do is make videos with music playing on the background and telling you what you should use to make your film.
+        <br>
+        <br>
+Let me tell you what to use, I made four features already. You use what you have. If you can hire Arri Alexa or Red then do it, if you can't be realistic and use what you got at your disposal. iPhone, GoPro those are good cameras, I made Honey And Wine on GoPro. Remember image is important but the sound is more important, make sure it sounds amazing and your audience will forgive your indie look.<br>
+<br>
+When shooting I recommend you the following: light your scene using practical lights, get a wide and establishing shots first, then get medium shots and finish with close-ups. This will give you the most editing options.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/4.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Step 5) -->
+<div id="step5" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Editing :(</h2><br>
+      <h4>This is the boring part, but very important. If you can afford to get an editor go ahead. But I don't think you need an editor with today's technology. Editing a movie is time-consuming but very doable on your own.
+        <br>
+        <br>
+Usually, I'd prefer to edit a movie myself and credit a fictional editor. It gives me the most options and freedom and saves time. I don't have to call, write emails and explain what to change or what to add. I do what I want, what I feel is best for the story. You can edit a rough cut of the movie in two days yourself if you put your mind to it. The rest is easy, you just polish the film by adding and removing takes.<br>
+<br>
+I always use Premire Pro, and I think it's the best editing software out there. Tip: once you're happy with your final cut, get a sound editor. Sound is very important, do not try to do it yourself, you'll mess up.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/5.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Step 3) -->
+<div id="step6" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Getting Your Movie Out There </h2><br>
+      <h4>You made your film. See it wasn't that easy. Now it's time to get it out there. You have options, trust me. The easiest way is to publish your film to YouTube on a monetized channel and generate profit that way. The problem is it will be absolutely pirated because there's no way to prevent someone from downloading your film off YouTube.
+        <br>
+        <br>
+The second option is Amazon Prime. You can get your film out there yourself but it takes more effort, you need subtitles and they are very peaky with the formatting and video quality. I'd still recommend you going this way because the audience size and platform quality is absolutely amazing for independent filmmakers.<br>
+<br>
+The other option is to go with a sales agent. But I would not recommend this. If you want to go this route, get ready for months of emails and endless talking. IMDb Pro is a good place to start.
+</div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/6.png" alt="Paris" width="400" height="300">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image -->
+<img style="width:100%;" id="image" src="img/main2.png">
+<!-- end -->
+
+<!-- Image -->
+<img style="width:100%;" id="image" src="img/main3.png">
+<!-- end -->
+
+
+<!-- Container (Contact Section) -->
+<div id="connect" class="container-fluid bg-grey">
+  <h2 class="text-center">Connect With Hank</h2>
+  <!-- Test -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add font awesome icons -->
+<a href="https://www.facebook.com/HankOrion" target="_blank" class="fa fa-facebook"></a>
+<a href="https://www.twitter.com/HankOrion" target="_blank" class="fa fa-twitter"></a>
+<a href="https://www.youtube.com/c/HankOrionYT" target="_blank" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/HankOrion" target="_blank" class="fa fa-instagram"></a>
+<!-- end -->
+
+<style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.fa:hover {
+    opacity: 100;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+</style>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#imakemovies" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#imakemovies']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
